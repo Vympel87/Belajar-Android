@@ -12,10 +12,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         with(binding) {
             btn1.setOnClickListener {
-                Toast.makeText(this@MainActivity, "You push the button", Toast.LENGTH_SHORT).show()
+                var name = binding.inputTeks1.text.toString()
+                var message = if (name.isNotEmpty()) "Hello $name!" else "You push the button"
+                Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@MainActivity, "You push the button", Toast.LENGTH_SHORT).show()
             }
             btn2.setOnClickListener {
-                Toast.makeText(this@MainActivity, "You push the button again", Toast.LENGTH_SHORT).show()
+                var message = inputTeks2.editableText
+                Toast.makeText(this@MainActivity, "Hello $message!", Toast.LENGTH_SHORT).show()
             }
         }
     }
